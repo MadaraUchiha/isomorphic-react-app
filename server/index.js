@@ -24,4 +24,5 @@ app.get('/', (request, response) => {
     response.render('index', {markup});
 });
 
-app.listen(8080);
+let port = parseInt(process.argv[2], 10) || 8080;
+app.listen(port, () => console.log(`Server Started! on port ${port}`));
